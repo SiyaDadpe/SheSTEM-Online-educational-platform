@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> SheSTEM Education</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+         .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); justify-items: center; align-items: start;
+            gap: 20px;
+            padding: 40px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .feature {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -52,7 +105,7 @@
         
         <section id="carousel">
             <h2>Our Featured Courses</h2>
-            <div class="carousel-container">
+            <div class="carousel-container" onclick="if (!event.target.classList.contains('carousel-button')) { window.location.href='resources.html'; }">
                 <div class="carousel-slide">
                     <img src="assets/pexels-divinetechygirl-1181263.jpg" alt="Course 1">
                 </div>
@@ -62,15 +115,18 @@
                 <div class="carousel-slide">
                     <img src="assets/pexels-thisisengineering-3861967.jpg" alt="Course 3">
                 </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-button" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button" onclick="nextSlide()">&#10095;</button>
+                </div>
             </div>
-            
         </section>
+
         <section id="cta">
             <h2>Ready to Dive In?</h2>
             <p>Start your journey into STEM with us. Join today and unlock endless possibilities!</p>
             <a href="signup.html" class="cta-btn">Sign Up Now</a>
         </section>
-        
     </main>
 
     <footer>
@@ -87,6 +143,30 @@
     <div class="side-button">
         <button onclick="window.location.href='https://siyadadpe.github.io/Sarina-chatbot/'">Chat with Sarina</button>
     </div>
-   
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Show the first slide and set an interval to change slides every 7 seconds
+        showSlide(currentIndex);
+        setInterval(nextSlide, 7000);
+    </script>
 </body>
 </html>
