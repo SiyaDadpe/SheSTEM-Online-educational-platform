@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive User Profile</title>
+    <link rel="stylesheet" href="userprofile.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to STEM Learning</h1>
+    </header>
+
+    <main>
+        <section id="user-profile">
+            <h2>Your Profile</h2>
+            <div class="profile-summary" onclick="toggleProfileDetails()">
+                <p><strong>Click to view your profile</strong></p>
+                <p id="profile-status">Profile details hidden</p>
+            </div>
+
+            <div class="profile-details" id="profile-details">
+                <h3>Profile Information</h3>
+                <div class="profile-info">
+                    <p><strong>Name:</strong> Siya Dadpe</p>
+                    <p><strong>Email:</strong> siya@gmail.com</p>
+                    <p><strong>Bio:</strong> Aspiring engineer passionate about robotics and coding!</p>
+                </div>
+                <button onclick="editProfile()">Edit Profile</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SheSTEM Education for Girls</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="userprofile.js"></script>
+</body>
+</html>
+
+

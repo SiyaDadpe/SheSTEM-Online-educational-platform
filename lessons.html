@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Lessons</title>
+    <link rel="stylesheet" href="lessons.css">
+</head>
+<body>
+
+    <header>
+        <h1>Explore Our STEM Lessons</h1>
+    </header>
+
+    <main>
+        
+        <section id="filter">
+            <h2>Filter Lessons</h2>
+            <div class="filter-options">
+                <label for="difficulty">Difficulty Level:</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="programming">Programming</option>
+                    <option value="engineering">Engineering</option>
+                </select>
+            </div>
+        </section>
+
+       
+        <section id="lessons">
+            <h2>Recommended Lessons</h2>
+            <div class="lesson-container">
+               
+                <div class="lesson-card">
+                    <img src="assets/pexels-pixabay-219701.jpg" alt="Lesson 1">
+                    <div class="lesson-info">
+                        <h3>Introduction to Robotics</h3>
+                        <p>Learn the basics of building and programming robots.</p>
+                        <button class="cta-btn">Start Learning</button>
+                    </div>
+                </div>
+
+                
+                <div class="lesson-card">
+                    <img src="assets/pexels-googledeepmind-18069696.jpg" alt="Lesson 2">
+                    <div class="lesson-info">
+                        <h3>Basics of Programming</h3>
+                        <p>Get started with programming concepts using Python.</p>
+                        <button class="cta-btn">Start Learning</button>
+                    </div>
+                </div>
+
+                
+                <div class="lesson-card">
+                    <img src="assets/pexels-googledeepmind-17485705.jpg" alt="Lesson 3">
+                    <div class="lesson-info">
+                        <h3>Coding for Engineers</h3>
+                        <p>Understand core math concepts used in engineering.</p>
+                        <button class="cta-btn">Start Learning</button>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SheSTEM Education for Girls</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
